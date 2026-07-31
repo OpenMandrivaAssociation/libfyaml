@@ -3,7 +3,7 @@
 %define devname %mklibname fyaml -d
 
 Name:		libfyaml
-Version:	0.9.2
+Version:	0.9.6
 Release:	1
 Source0:	https://github.com/pantoniou/libfyaml/releases/download/v%{version}/libfyaml-%{version}.tar.gz
 Summary:	YAML parser and emitter
