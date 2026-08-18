@@ -18,6 +18,8 @@ BuildRequires:	python%{pyver}dist(sphinx-rtd-theme)
 BuildRequires:	python%{pyver}dist(sphinx-markdown-builder)
 BuildRequires:	pkgconfig(check)
 BuildSystem:	cmake
+# yaml/json test suites are fetched with git; ABF has no network
+BuildOption:	-DENABLE_NETWORK=OFF
 
 %description
 YAML parser and emitter
