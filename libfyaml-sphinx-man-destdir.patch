@@ -1,0 +1,20 @@
+file(INSTALL) inside install(CODE) already prefixes DESTDIR. Including
+$ENV{DESTDIR} in DESTINATION installs man pages under $DESTDIR/$DESTDIR/usr.
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1640,12 +1640,12 @@
+         endif()
+ 
+         file(INSTALL
+-            DESTINATION \"\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_MANDIR}/man1\"
++            DESTINATION \"\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_MANDIR}/man1\"
+             TYPE FILE
+             FILES \"${SPHINX_BUILD_DIR}/man/fy-tool.1\"
+         )
+         file(INSTALL
+-            DESTINATION \"\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_MANDIR}/man3\"
++            DESTINATION \"\${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_MANDIR}/man3\"
+             TYPE FILE
+             FILES
+                 \"${SPHINX_BUILD_DIR}/man/libfyaml.3\"

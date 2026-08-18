@@ -6,11 +6,16 @@ Name:		libfyaml
 Version:	0.9.6
 Release:	1
 Source0:	https://github.com/pantoniou/libfyaml/releases/download/v%{version}/libfyaml-%{version}.tar.gz
+Patch0:		libfyaml-sphinx-man-destdir.patch
 Summary:	YAML parser and emitter
 URL:		https://github.com/pantoniou/libfyaml
 License:	MIT
 Group:		System/Libraries
 BuildRequires:	cmake
+BuildRequires:	python%{pyver}dist(linuxdoc)
+BuildRequires:	python%{pyver}dist(sphinx)
+BuildRequires:	python%{pyver}dist(sphinx-rtd-theme)
+BuildRequires:	python%{pyver}dist(sphinx-markdown-builder)
 BuildSystem:	cmake
 
 %description
@@ -34,6 +39,7 @@ a YAML parser and emitter
 
 %files
 %{_bindir}/*
+%{_mandir}/man1/*
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
@@ -43,3 +49,4 @@ a YAML parser and emitter
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*
 %{_libdir}/cmake/*
+%{_mandir}/man3/*
