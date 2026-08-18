@@ -17,6 +17,8 @@ BuildRequires:	python%{pyver}dist(sphinx)
 BuildRequires:	python%{pyver}dist(sphinx-rtd-theme)
 BuildRequires:	python%{pyver}dist(sphinx-markdown-builder)
 BuildSystem:	cmake
+# cmake FetchContent of libcheck needs the network; ABF has none
+BuildOption:	-DBUILD_TESTING=OFF
 
 %description
 YAML parser and emitter
