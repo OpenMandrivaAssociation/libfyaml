@@ -4,7 +4,7 @@
 
 Name:		libfyaml
 Version:	0.9.6
-Release:	1
+Release:	2
 Source0:	https://github.com/pantoniou/libfyaml/releases/download/v%{version}/libfyaml-%{version}.tar.gz
 Patch0:		libfyaml-sphinx-man-destdir.patch
 Summary:	YAML parser and emitter
@@ -16,9 +16,8 @@ BuildRequires:	python%{pyver}dist(linuxdoc)
 BuildRequires:	python%{pyver}dist(sphinx)
 BuildRequires:	python%{pyver}dist(sphinx-rtd-theme)
 BuildRequires:	python%{pyver}dist(sphinx-markdown-builder)
+BuildRequires:	pkgconfig(check)
 BuildSystem:	cmake
-# cmake FetchContent of libcheck needs the network; ABF has none
-BuildOption:	-DBUILD_TESTING=OFF
 
 %description
 YAML parser and emitter
